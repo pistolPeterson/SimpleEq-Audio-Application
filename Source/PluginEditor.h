@@ -164,6 +164,11 @@ struct LookAndFeel : juce::LookAndFeel_V4
         float rotaryStartAngle,
         float rotaryEndAngle,
         juce::Slider&) override;
+
+    void drawToggleButton (juce::Graphics &g,
+                          juce::ToggleButton & toggleButton, 
+                          bool shouldDrawButtonAsHighlighted, 
+                          bool shouldDrawButtonAsDown) override;
 };
 
 
@@ -313,6 +318,7 @@ private:
                      analyzerEnabledButtonAttachment;
 
     std::vector<juce::Component*> getComps();
+    LookAndFeel lnf;
 
    //MonoChain monoChain;
 
